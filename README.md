@@ -7,12 +7,14 @@ Configure Django
 ----------------
 
 add to urls.py
-...
+
+```
 (r'^', include('myblog.urls'))
-...
+```
 
 settings.py
-...
+
+```
 import os.path
 
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))  # get project path
@@ -41,7 +43,7 @@ BLOG_SETTINGS = {
   }
 }
 
-###
+...
 
 THEME_ROOT = os.path.join(TEMPLATE_PATH, BLOG_SETTINGS['appearance']['theme'])  # set used theme root
 
@@ -49,24 +51,25 @@ ASSETS_ROOT = os.path.join(THEME_ROOT, 'assets')  # set theme assets root
 
 ASSETS_URL = '/assets/'  # set theme assets url
 
-###
+...
 
 TEMPLATE_DIRS = (
-  ###
+  ...
   os.path.join(TEMPLATE_PATH, BLOG_SETTINGS['appearance']['theme']),
-  ###
+  ...
 )
 
-###
+...
 
 INSTALLED_APPS = (
-  ###
+  ...
   'myblog',
-  ###
+  ...
 )
-...
+```
 
 Update database
-...
+
+```
 python manage.py syncdb
-...
+```
