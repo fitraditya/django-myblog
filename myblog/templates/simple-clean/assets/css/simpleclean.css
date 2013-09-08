@@ -1,0 +1,106 @@
+/*
+  Simple Clean v1.0
+
+  Copyright 2013 Fitra Aditya
+  Licensed under the Apache License v2.0
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  http://fitraditya,com
+  https://github.com/fitraditya/simple-clean
+*/
+
+body {
+  padding-top: 60px;
+}
+.container-page {
+  max-width: 800px;
+  margin: auto;
+}
+.navbar-default {
+  background-color: #fff;
+  border-color: #fff;
+}
+.navbar-nav > li > a {
+  font-size: 18px;
+  font-weight: bold;
+}
+.dropdown-menu > li > a {
+  height: 35px;
+  padding: 8px 25px;
+}
+.dropdown-menu > li > a:hover {
+  height: 35px;
+  padding: 8px 25px;
+  background-color: #e7e7e7;
+  color: #555;
+}
+.page-header h2 a {
+  color: #000;
+}
+.page-header h2 a:hover {
+  color: #999999;
+  text-decoration: none;
+}
+.page-header .pencil-line {
+  font-family: Arial;
+}
+.page-header .lead {
+  font-size: 18px;
+}
+.page-content {
+  padding: 3px;
+}
+.page-content .lead {
+  margin-top: 20px;
+  font-size: 16px;
+}
+.post-entries {
+  padding: 3px;
+}
+.post-entry h2 a {
+  color: #000;
+}
+.post-entry h2 a:hover {
+  color: #999999;
+  text-decoration: none;
+}
+.post-entry .lead {
+  margin-top: 20px;
+  font-size: 16px;
+}
+.post-entry:first-child {
+  margin-top: 0;
+}
+.post-entry {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eeeeee;
+}
+.post-entry:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.post-content p {
+  font-size: 18px;
+  line-height: 24px;
+}
+.post-content blockquote {
+  font-style: italic;
+}
+.post-comment {
+  margin-top: 10px;
+  padding: 15px;
+}
+.post-comment .media-list {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+footer .row {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 5px solid #eeeeee;
+}
+footer .footer-left, footer .footer-right {
+  margin-top: 15px;
+  font-size: 16px;
+}

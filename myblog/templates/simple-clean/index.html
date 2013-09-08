@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block page_title %}{{ blog_title }}{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+  <h1>{{ blog_title }}</h1>
+  <p class="lead">{{ blog_subtitle }}</p>
+</div>
+<div class="post-entries">
+  {% if posts %}
+  {% for post in posts %}
+  <div class="post-entry">
+    <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+    <p class="lead text-muted">by <a href="{{ post.author.get_absolute_url }}">{{ post.author }}</a> posted on <a href="#">{{ post.date }}</a></p>
+    <div class="post-content">
+      {{ post.content|safe }}
+    </div>
+    <p class="lead text-muted">posted in <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></p>
+  </div>
+  {% endfor %}
+  {% else %}
+  <div class="post-entry">
+    <h2>Ups, empty post :(</h2>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
