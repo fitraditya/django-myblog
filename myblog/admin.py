@@ -21,7 +21,7 @@ class PostAdmin(admin.ModelAdmin):
   }
 
   class Media:
-    js = [ settings.ASSETS_URL+'js/tinymce/tiny_mce.js', settings.ASSETS_URL+'js/run_tinymce.js' ]
+    js = [ settings.PLUGIN_URL+'plugins/tinymce/tiny_mce.js', settings.PLUGIN_URL+'plugins/tinymce/run_tinymce.js' ]
 
   def save_model(self, request, obj, form, change):
     if not change:
