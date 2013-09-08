@@ -68,8 +68,10 @@ INSTALLED_APPS = (
 )
 ```
 
-Update database
+update database
 
 ```
 python manage.py syncdb
 ```
+
+First Use
