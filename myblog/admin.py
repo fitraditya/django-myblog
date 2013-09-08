@@ -9,16 +9,16 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class PostAdmin(admin.ModelAdmin):
+  formfield_overrides = {
+    models.CharField: {'widget': TextInput(attrs={'size':'140'})},
+    models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':100})},
+  }
   exclude = ['author', 'date']
   date_hierarchy = 'date'
   list_display = ('title', 'author', 'date', 'status')
   list_filter = ['author', 'category', 'status']
   search_fields = ('title', 'body')
   prepopulated_fields = {'slug': ('title',)}
-  formfield_overrides = {
-    models.CharField: {'widget': TextInput(attrs={'size':'140'})},
-    models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':100})},
-  }
 
   class Media:
     js = [ settings.PLUGINS_URL+'tinymce/tiny_mce.js', settings.PLUGINS_URL+'tinymce/run_tinymce.js' ]

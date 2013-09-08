@@ -1,0 +1,171 @@
+/*
+  Simple Clean v1.0
+
+  Copyright 2013 Fitra Aditya
+  Licensed under the Apache License v2.0
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  http://fitraditya,com
+  https://github.com/fitraditya/simple-clean
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Rancho);
+@import url(http://fonts.googleapis.com/css?family=Quattrocento);
+
+body {
+  background: #1b1b1b url(../img/bg.png);
+  font-family: 'Quattrocento', serif;
+}
+
+table {
+  width: 100%;
+}
+
+table tr td {
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: middle;
+  border: 1px solid #dddddd;
+}
+
+table > tr > td {
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: middle;
+  border: 1px solid #dddddd;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.container-page {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #fbfbfb;
+  border-left: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+}
+
+.container-wrapper {
+  max-width: 800px;
+  margin: auto;
+}
+
+.page-header h1 {
+  font-family: 'Rancho', cursive;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.post-entry {
+  margin-bottom: 70px;
+  padding: 50px;
+  background-color: #fafafa;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+}
+
+.post-title {
+  text-align: center;
+}
+
+.post-title h1 {
+  font-family: 'Rancho', cursive;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.post-title h1 a, .post-title h1 a:hover, .post-title h1 a:active, .post-title h1 a:visited {
+  color: #61AABC;
+  text-decoration: none;
+}
+
+.post-title h2 {
+  margin-bottom: 40px;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.post-title .lead {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.post-title .lead a, .post-title .lead a:hover, .post-title .lead a:active, .post-title .lead a:visited {
+  color: #999;
+}
+
+.post-content p {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.post-footer .lead {
+  margin-top: 30px;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-align: right;
+}
+
+.post-footer .lead {
+  color: #999;
+}
+
+.load-post {
+  width: 100%;
+  text-align: center;
+}
+
+.load-post button {
+  margin-top: -80px;
+}
+
+.page-footer {
+  width: 100%;
+  margin-bottom: 60px;
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #fbfbfb;
+}
+
+/* Override bootstrap style */
+
+.navbar {
+  border-radius: 0;
+}
+
+.navbar-default {
+  background-color: #fbfbfb;
+  border: none;
+  border-bottom: 1px dotted #ddd;
+}
+
+.navbar-nav {
+  margin-top: 20px;
+}
+
+.navbar-nav > li > a {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dropdown-menu > li > a {
+  height: 35px;
+  padding: 8px 25px;
+}
+
+.dropdown-menu > li > a:hover {
+  height: 35px;
+  padding: 8px 25px;
+  background-color: #e7e7e7;
+  color: #555;
+}
+
+.page-header {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  border-bottom: 0;
+  text-align: center;
+}

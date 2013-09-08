@@ -8,57 +8,54 @@
   <meta name="author" content="Fitra Aditya, fitra@g.pl">
   <title>{% block page_title %}{% endblock %}</title>
   <link rel="stylesheet" href="/assets/css/bootstrap.css">
-  <link rel="stylesheet" href="/assets/css/simpleclean.css">
+  <link rel="stylesheet" href="/assets/css/simple-clean.css">
 </head>
 
 <body>
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container-page">
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">Home</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="menu">Category <span class="caret"></span></a>
-            {% if categories %}
-            <ul class="dropdown-menu" aria-labelledby="themes">
-              {% for category in categories %}
-              <li><a href="{{ category.get_absolute_url }}">{{ category.category }}</a></li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
   <div class="container-page">
-    <div class="row">
-      <div class="col-md-12">
-        {% block page_content %}{% endblock %}
+    <div class="container-wrapper">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <b class="caret"></b></a>
+              {% if categories %}
+              <ul class="dropdown-menu">
+                {% for category in categories %}
+                <li><a href="archive.html">Uncategorized</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <header class="page-header">
+            <h1>{{ blog_title }}</h1>
+          </header>
+          <section class="post-entries">
+            {% block page_content %}{% endblock %}
+          </section>
+        </div>
       </div>
+      <footer class="page-footer">
+        <p class="hidden-md"><span class="pull-left"><strong>Simple Clean</strong> - &copy; <a href="http://fitraditya.com" class="text-muted">Fitra Aditya</a></span> <span class="pull-right">Powered by <a href="http://getbootstrap.com" class="text-muted">Bootstrap</a></span></p>
+      </footer>
     </div>
   </div>
-  <footer>
-    <div class="container-page">
-      <div class="row">
-        <div class="col-md-6">
-          <p class="footer-left"><strong>Simple Clean</strong> - &copy; <a href="http://fitraditya.com" target="_blank">Fitra Aditya</a> </p>
-        </div>
-        <div class="col-md-6">
-          <p class="footer-right text-right">Powered by <a href="http://getbootstrap.com" target="_blank">Bootstrap</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="/assets/js/jquery.js"></script>
-  <script src="/assets/js/bootstrap.js"></script>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
 </body>
 
 </html>
