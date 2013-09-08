@@ -14,7 +14,10 @@ def index(request):
 
 def view_post(request, slug):
   return render_to_response('view.html', {
-    'post': get_object_or_404(Post, slug=slug)
+    'blog_title': settings.BLOG_SETTINGS['general']['blog_title'],
+    'post': get_object_or_404(Post, slug=slug),
+    'disqus': settings.BLOG_SETTINGS['comment']['disqus'],
+    'disqus_name': settings.BLOG_SETTINGS['comment']['disqus_name']
   })
 
 
@@ -22,6 +25,7 @@ def view_category(request, slug):
   category = get_object_or_404(Category, slug=slug)
 
   return render_to_response('category.html', {
+    'blog_title': settings.BLOG_SETTINGS['general']['blog_title'],
     'category': category,
     'posts': Post.objects.filter(category=category)[:settings.BLOG_SETTINGS['reading']['posts']]
   })
@@ -31,6 +35,7 @@ def view_author(request, author):
   author = get_object_or_404(Author, username=author)
 
   return render_to_response('author.html', {
+    'blog_title': settings.BLOG_SETTINGS['general']['blog_title'],
     'author': author,
     'posts': Post.objects.filter(author=author)[:settings.BLOG_SETTINGS['reading']['posts']]
   }, context_instance=RequestContext(request))

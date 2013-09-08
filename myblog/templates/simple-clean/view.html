@@ -1,29 +1,39 @@
 {% extends 'base.html' %}
 
-{% block page_title %}{{ post.title }}{% endblock %}
+{% block page_title %}{{ blog_title }}{% endblock %}
 
 {% block page_content %}
-<div class="page-header">
-  <h2>{{ post.title }}</h2>
-  <p class="lead text-muted">by <a href="{{ post.author.get_absolute_url }}">{{ post.author }}</a> posted on <a href="#">{{ post.date }}</a></p>
-</div>
-<div class="page-content">
+{% if post %}
+<article class="post-entry">
+  <div class="post-title">
+    <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+    <p class="lead">{{ post.date|date:"d M Y" }}</p>
+  </div>
   <div class="post-content">
     {{ post.content|safe }}
   </div>
-  <p class="lead text-muted">posted in <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></p>
-  <div class="post-comment">
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_shortname = 'fitraditya';
-      (function() {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
+  <div class="post-footer">
+    <p class="lead">Posted by <a href="{{ post.author.get_absolute_url }}">{{ post.author }}</a>, posted in <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></p>
   </div>
-</div>
+  {% if disqus %}
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_shortname = '{{ disqus_name }}';
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  {% endif %}
+</article>
+{% else %}
+<article class="post-entry">
+  <div class="post-title">
+    <h1 class="text-danger">Ups, 404 post not found :(</h1>
+  </div>
+</article>
+{% endif %}
 {% endblock %}
